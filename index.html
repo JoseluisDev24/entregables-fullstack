@@ -4,36 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container-principal">
-      <nav>
-        <span class="nav-title">
-          <img src="/entregables-fullstack/img/ray.png" alt="-rayo" />
+      <div class="nav-responsive">
+        <div class="nav-title">
+          <img src="img/ray1.png" alt="-rayo" />
           <p>Fastodo</p>
-        </span>
+        </div>
+        <div class="menu">
+          <img src="img/menu.png" width="30px" alt="menu" />
+        </div>
+      </div>
+      <nav>
+        <div class="nav-title">
+          <img
+            src="img/ray1.png"
+            alt="logo-rayo"
+            width="30px"
+          />
+          <p>Fastodo</p>
+        </div>
+        <div class="nav-list">
+          <span class="ul-title">My List</span>
+          <ul>
+            <div class="cross">
+              <a href="#"><li class="life">Life</li></a>
+              <a href="#"
+                ><img
+                  src="/entregables-fullstack/img/x.png"
+                  width="14px"
+                  height="14px"
+                  alt=""
+              /></a>
+            </div>
+            <a href="#"><li class="li">Work</li> </a>
+            <a href="#"><li class="li">Proyect A</li></a>
+            <a href="#"><li class="gray">+ New List</li> </a>
+          </ul>
+        </div>
       </nav>
-      <div class="container-header-main">
+      <div class="container-header-inputs">
         <header class="container-header">
-          <!-- <div class="date"> -->
-            <span class="date">Feb <br> 4</span>
-          <!-- </div> -->
+          <div class="span-date">
+            <span class="date">Feb</span>
+            <span class="date">4</span>
+          </div>
           <div class="title">
             <h1>Good Afternoon.</h1>
-            <span class="second-color">What's your plan of today? </span>
+            <span class="second-color">What's your plan of today?</span>
           </div>
         </header>
         <main>
           <form action="" class="form">
             <div class="input-container">
-              <input type="radio" id="radio" name="radio" />
+              <input type="text" placeholder="Add Todo" class="newTodo" />
+              <button class="btn">Add</button>
+            </div>
+            <div class="input-container">
+              <input type="radio" id="radio" />
               <label for="radio" class="label">
                 <span class="radio-button"></span>
                 <div class="cols">
                   <div class="col1">
-                    <span>2024-02-04</span>
+                    <span class="date-form">2024-02-04</span>
                     <span>Call Max</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="input-container">
+              <input type="radio" id="radio1" />
+              <label for="radio1" class="label">
+                <span class="radio-button"></span>
+                <div class="cols">
+                  <div class="col1">
+                    <span class="date-form">2024-05-04</span>
+                    <span>Go to gym</span>
                   </div>
                   <div class="col-2">
                     <span>#reminder</span>
@@ -42,13 +90,13 @@
               </label>
             </div>
             <div class="input-container">
-              <input type="radio" id="radio" name="radio" />
-              <label for="radio" class="label">
+              <input type="radio" id="radio2" />
+              <label for="radio2" class="label">
                 <span class="radio-button"></span>
                 <div class="cols">
                   <div class="col1">
-                    <span>2024-02-04</span>
-                    <span>Call Max</span>
+                    <span class="date-form">2024-05-04</span>
+                    <span>Take out the trash</span>
                   </div>
                   <div class="col-2">
                     <span>#reminder</span>
@@ -57,43 +105,13 @@
               </label>
             </div>
             <div class="input-container">
-              <input type="radio" id="radio" name="radio" />
-              <label for="radio" class="label">
+              <input type="radio" id="radio3" />
+              <label for="radio3" class="label">
                 <span class="radio-button"></span>
                 <div class="cols">
                   <div class="col1">
-                    <span>2024-02-04</span>
-                    <span>Call Max</span>
-                  </div>
-                  <div class="col-2">
-                    <span>#reminder</span>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="input-container">
-              <input type="radio" id="radio" name="radio" />
-              <label for="radio" class="label">
-                <span class="radio-button"></span>
-                <div class="cols">
-                  <div class="col1">
-                    <span>2024-02-04</span>
-                    <span>Call Max</span>
-                  </div>
-                  <div class="col-2">
-                    <span>#reminder</span>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="input-container">
-              <input type="radio" id="radio" name="radio" />
-              <label for="radio" class="label">
-                <span class="radio-button"></span>
-                <div class="cols">
-                  <div class="col1">
-                    <span>2024-02-04</span>
-                    <span>Call Max</span>
+                    <span class="date-form">2024-08-04</span>
+                    <span>Finish proyect for BIOS</span>
                   </div>
                   <div class="col-2">
                     <span>#reminder</span>
@@ -104,6 +122,21 @@
           </form>
         </main>
       </div>
+      <aside class="aside">
+        <span class="notes">Your Notes</span>
+        <div class="note">
+          <span> Shopping list </span>
+          <p>Lorem ipsum dolor, suscipit quidem eos?</p>
+        </div>
+        <div class="note note-color">
+          <span> Shopping list </span>
+          <p>Lorem ipsum dolor, suscipit quidem eos?</p>
+        </div>
+        <div class="note note-color2">
+          <span> Shopping list </span>
+          <p>Lorem ipsum dolor, suscipit quidem eos?</p>
+        </div>
+      </aside>
     </div>
   </body>
 </html>
