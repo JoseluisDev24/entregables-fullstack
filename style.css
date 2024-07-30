@@ -7,6 +7,7 @@ body {
 
 /* cambiar tamaño a fecha span */
 /* marcar y desmarcar radio */
+/* crear botones de delete para inputs */
 
 /* @font-face {
   font-family: "Neonderthaw", cursive;
@@ -26,6 +27,7 @@ body {
 main {
   width: 64%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 .container-header {
@@ -43,12 +45,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
 }
 
 nav,
 aside {
   width: 20%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,6 +172,7 @@ ul {
 .life {
   color: black;
   font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .cross {
@@ -240,8 +244,31 @@ ul {
   align-items: center;
 }
 
+.list-delete {
+  background: rgb(36 34 34);
+  border-radius: 10px;
+  width: 100%;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.padding-list {
+  padding: 20px;
+}
+
+.imagen {
+  padding: 20px;
+}
+
+#todo-list {
+  gap: 20px;
+}
+
+
 .input-container:hover {
-  background: rgb(66, 63, 63);
+  background: rgb(66, 38, 38);
 }
 
 
@@ -249,9 +276,9 @@ ul {
   padding: 10px;
 }
 
-.add:hover {
+/* .add:hover {
   color: #fff;
-}
+} */
 
 .cols {
   width: 100%;
@@ -277,6 +304,10 @@ ul {
 input {
   display: none;
 }
+
+.btn {
+    display: block;
+  }
 
 .newTodo {
   display: block;
@@ -304,7 +335,7 @@ input {
 }
 
 .btn:hover {
-  background: rgb(148, 148, 79);
+  background: rgb(240, 240, 91);
 }
 
 .radio-button {
@@ -343,6 +374,13 @@ aside {
   align-items: center;
 }
 
+.note-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
 .note {
   width: 60%;
   height: 15%;
@@ -354,18 +392,34 @@ aside {
   align-items: center;
   background: rgb(161, 161, 86);
   border-radius: 10px;
-  box-shadow: 2px 1px 1px rgb(226, 165, 165);
+  border: 1px solid violet; /* Optional: Border for styling */
+  /* box-shadow: 0 2px 4px rgba(238, 130, 238, 0.8); */
   span {
     color: #111111;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
   }
   p {
-    font-size: 16px;
+    font-size: 14px;
     color: #111111;
     width: 90%;
   }
 }
+
+.note:hover {
+  background: rgb(182, 182, 111);
+  cursor: pointer;
+}
+
+@media (width <= 1024px) {
+  .note span {
+    font-size: 17px; 
+     p {
+      font-size: 10px;
+    } 
+}
+}
+
 
 .notes {
   margin: 44px 0 20px 0;
