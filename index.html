@@ -19,24 +19,16 @@
       </div>
       <nav>
         <div class="nav-title">
-          <img
-            src="img/ray1.png"
-            alt="logo-rayo"
-            width="30px"
-          />
+          <img src="img/ray1.png" alt="logo-rayo" width="30px" />
           <p>Fastodo</p>
         </div>
         <div class="nav-list">
           <span class="ul-title">My List</span>
-          <ul>
+          <ul class="list1">
             <div class="cross">
               <a href="#"><li class="life">Life</li></a>
               <a href="#"
-                ><img
-                  src="/entregables-fullstack/img/x.png"
-                  width="14px"
-                  height="14px"
-                  alt=""
+                ><img src="/img/x.png" width="14px" height="14px" alt=""
               /></a>
             </div>
             <a href="#"><li class="li">Work</li> </a>
@@ -57,86 +49,43 @@
           </div>
         </header>
         <main>
-          <form action="" class="form">
+          <form class="form" id="todo-form">
             <div class="input-container">
-              <input type="text" placeholder="Add Todo" class="newTodo" />
-              <button class="btn">Add</button>
-            </div>
-            <div class="input-container">
-              <input type="radio" id="radio" />
-              <label for="radio" class="label">
-                <span class="radio-button"></span>
-                <div class="cols">
-                  <div class="col1">
-                    <span class="date-form">2024-02-04</span>
-                    <span>Call Max</span>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="input-container">
-              <input type="radio" id="radio1" />
-              <label for="radio1" class="label">
-                <span class="radio-button"></span>
-                <div class="cols">
-                  <div class="col1">
-                    <span class="date-form">2024-05-04</span>
-                    <span>Go to gym</span>
-                  </div>
-                  <div class="col-2">
-                    <span>#reminder</span>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="input-container">
-              <input type="radio" id="radio2" />
-              <label for="radio2" class="label">
-                <span class="radio-button"></span>
-                <div class="cols">
-                  <div class="col1">
-                    <span class="date-form">2024-05-04</span>
-                    <span>Take out the trash</span>
-                  </div>
-                  <div class="col-2">
-                    <span>#reminder</span>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="input-container">
-              <input type="radio" id="radio3" />
-              <label for="radio3" class="label">
-                <span class="radio-button"></span>
-                <div class="cols">
-                  <div class="col1">
-                    <span class="date-form">2024-08-04</span>
-                    <span>Finish proyect for BIOS</span>
-                  </div>
-                  <div class="col-2">
-                    <span>#reminder</span>
-                  </div>
-                </div>
-              </label>
+              <input
+                type="text"
+                placeholder="Add Todo"
+                class="newTodo"
+                id="todo"
+              />
+              <input type="submit" value="Add" class="btn" />
             </div>
           </form>
+          <ul id="todo-list">
+          </ul>
         </main>
       </div>
       <aside class="aside">
         <span class="notes">Your Notes</span>
         <div class="note">
+          <div class="note-container">
           <span> Shopping list </span>
           <p>Lorem ipsum dolor, suscipit quidem eos?</p>
+          </div>
         </div>
         <div class="note note-color">
+          <div class="note-container">
           <span> Shopping list </span>
           <p>Lorem ipsum dolor, suscipit quidem eos?</p>
+          </div>
         </div>
         <div class="note note-color2">
+          <div class="note-container">
           <span> Shopping list </span>
           <p>Lorem ipsum dolor, suscipit quidem eos?</p>
+          </div>
         </div>
       </aside>
     </div>
   </body>
+  <script src="/main.js"></script>
 </html>
