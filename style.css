@@ -193,7 +193,6 @@ button {
   padding: 10px;
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 .ico {
@@ -226,10 +225,9 @@ button {
 }
 
 .btn-delete {
-  font-size: 30px;
-  background: #ce6c61;
-  height: 100%;
-  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
 }
 
 .padding-list {
