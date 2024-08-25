@@ -19,13 +19,13 @@ body {
 }
 
 main {
-  width: 64%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .container-header {
-  max-width: 70%;
+  max-width: 60%;
   margin: 60px 0 24px;
   display: flex;
   justify-content: start;
@@ -36,21 +36,30 @@ main {
 }
 
 .container-header-inputs {
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 80px;
 }
 
-nav,
-aside {
+nav {
   width: 20%;
-  height: 100vh;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   background: rgb(32, 31, 31);
+}
+
+aside {
+  width: 20%;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(32, 31, 31);
+  padding: 36px 0;
 }
 
 .nav-responsive {
@@ -71,8 +80,8 @@ aside {
   align-items: center;
   gap: 15px;
   img {
-    width: 20%;
-    height: 40%;
+    width: 22px;
+    height: 40px;
   }
   h3 {
     font-size: 36px;
@@ -220,9 +229,9 @@ button {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  p{
-  position: absolute;
-  left: 58px;
+  p {
+    position: absolute;
+    left: 58px;
   }
 }
 
@@ -238,8 +247,13 @@ button {
   p {
     color: #ebe2e2;
     font-family: sans-serif;
- text-decoration: line-through;
+    text-decoration: line-through;
   }
+}
+
+.p {
+  color: #ebe2e2;
+  text-decoration: line-through;
 }
 
 .btn-delete {
@@ -247,7 +261,6 @@ button {
   color: rgb(150 199 178);
   cursor: pointer;
 }
-
 
 .padding-list {
   padding: 20px;
@@ -278,13 +291,6 @@ input {
   outline: none;
 }
 
-aside {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 10px 0;
-}
-
 .tasks-container {
   margin: 10px 0;
   min-width: 200px;
@@ -301,8 +307,10 @@ aside {
 
 .your-notes {
   margin-bottom: 30px;
-  font-size: 26px;
-  font-family: sans-serif;
+  width: 80%;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -324,11 +332,6 @@ aside {
     height: 200px;
     width: 30%;
     padding: 20px;
-
-    img {
-      width: 20%;
-      height: 24%;
-    }
   }
   .nav-responsive {
     display: flex;
@@ -354,11 +357,5 @@ aside {
 @media screen and (max-width: 992px) {
   .nav-title p {
     font-size: 32px;
-  }
-  .nav-title {
-    img {
-      height: 16%;
-      width: 20%;
-    }
   }
 }
