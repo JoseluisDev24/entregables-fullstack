@@ -12,6 +12,8 @@ const input = document.querySelector("#input");
 const addBtn = document.querySelector("#button");
 const noTask = document.querySelector(".noTask");
 const tasksContainer = document.querySelector(".tasks-container");
+const pCheck = "p";
+const uncheck = "btn-delete far fa-check-circle";
 
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -27,7 +29,7 @@ addBtn.addEventListener("click", (e) => {
     li.appendChild(addCheckBtn());
     li.appendChild(p);
     li.appendChild(addDeleteBtn());
-    ul.appendChild(li);
+    ul.prepend(li);
     li.className = "list-delete";
 
     input.value = "";
@@ -42,19 +44,28 @@ function addCheckBtn() {
   checkBtn.addEventListener("click", (e) => {
     const p = document.querySelector("p");
 
+    if (window.innerWidth < 450) {
+      p.classList.toggle(pCheck);
+      checkBtn.classList = uncheck;
+
+      return;
+    }
+
     const done = e.target.parentElement;
-    ul.removeChild(done);
+    done.remove();
+
     tasksContainer.appendChild(done);
+
     checkBtn.className = "btn-delete far fa-check-circle";
+
     p.className = "p";
 
     done.className = "new-li";
 
-    const del = document.querySelector(".btn-del");
-    del.addEventListener("click", (e) => {
-      const borrar = e.target.parentElement;
-      tasksContainer.removeChild(borrar);
-    });
+    const items = document.querySelectorAll("#ul-form li");
+    if (items.length === 0) {
+      noTask.style.display = "block";
+    }
   });
   return checkBtn;
 }
@@ -65,7 +76,7 @@ function addDeleteBtn() {
 
   deleteBtn.addEventListener("click", (e) => {
     const item = e.target.parentElement;
-    ul.removeChild(item);
+    item.remove();
 
     const items = document.querySelectorAll("#ul-form li");
 
@@ -75,3 +86,26 @@ function addDeleteBtn() {
   });
   return deleteBtn;
 }
+
+// text-decoration: line-through
+// // ul.appendChild(li);
+//     ul.prepend(li);
+// // ul.removeChild(item);
+//     item.remove();
+// Víctor Rosano
+// 10:34 p.m.
+// addCheckBtn()
+
+// console.log(window.innerWidth);
+//     if (window.innerWidth < 450) {
+//       // Cambiar estilo a completado
+
+//       return;
+//     }
+// despues del const p = document....
+// Víctor Rosano
+// 10:37 p.m.
+// position: fixed
+// right: 0
+// position: fixed
+// left: 0
