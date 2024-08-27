@@ -1,5 +1,3 @@
-// icono de Pestaña
-
 const date = document.getElementById("span-date");
 const DATE = new Date();
 date.innerHTML = DATE.toLocaleDateString("en", {
@@ -12,15 +10,16 @@ const input = document.querySelector("#input");
 const addBtn = document.querySelector("#button");
 const noTask = document.querySelector(".noTask");
 const tasksContainer = document.querySelector(".tasks-container");
-const pCheck = "p";
-const uncheck = "btn-delete far fa-check-circle";
+const pCheck = "p-checked"; // Clase para marcar la tarea como completada
+const uncheck = "btn-delete far fa-circle co"; // Clase para el ícono de tarea pendiente
+const checkClass = "btn-delete far fa-check-circle co"; // Clase para el ícono de tarea completada
 
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   const task = input.value;
   if (task === "") {
-    alert("Please add task");
+    alert("Please add a task");
   } else {
     const li = document.createElement("li");
     const p = document.createElement("p");
@@ -39,34 +38,40 @@ addBtn.addEventListener("click", (e) => {
 
 function addCheckBtn() {
   const checkBtn = document.createElement("button");
-  checkBtn.classList = "btn-delete far fa-circle co";
+  checkBtn.classList = uncheck;
 
   checkBtn.addEventListener("click", (e) => {
-    const p = document.querySelector("p");
+    const li = e.target.parentElement;
+    const p = li.querySelector("p");
 
     if (window.innerWidth < 450) {
       p.classList.toggle(pCheck);
-      checkBtn.classList = uncheck;
-
+      if (checkBtn.classList.contains("fa-check-circle")) {
+        checkBtn.classList = uncheck;
+      } else {
+        checkBtn.classList = checkClass;
+      }
       return;
     }
 
-    const done = e.target.parentElement;
-    done.remove();
-
-    tasksContainer.appendChild(done);
-
-    checkBtn.className = "btn-delete far fa-check-circle";
-
-    p.className = "p";
-
-    done.className = "new-li";
+    if (p.classList.contains(pCheck)) {
+      // Si la tarea está completada, volverla a pendiente
+      p.classList.remove(pCheck);
+      checkBtn.classList = uncheck;
+      ul.prepend(li); // Volver a colocar la tarea al inicio
+    } else {
+      // Si la tarea está pendiente, marcarla como completada
+      p.classList.add(pCheck);
+      checkBtn.classList = checkClass;
+      tasksContainer.appendChild(li); // Mover la tarea al contenedor de completadas
+    }
 
     const items = document.querySelectorAll("#ul-form li");
     if (items.length === 0) {
       noTask.style.display = "block";
     }
   });
+
   return checkBtn;
 }
 
@@ -84,28 +89,6 @@ function addDeleteBtn() {
       noTask.style.display = "block";
     }
   });
+
   return deleteBtn;
 }
-
-// text-decoration: line-through
-// // ul.appendChild(li);
-//     ul.prepend(li);
-// // ul.removeChild(item);
-//     item.remove();
-// Víctor Rosano
-// 10:34 p.m.
-// addCheckBtn()
-
-// console.log(window.innerWidth);
-//     if (window.innerWidth < 450) {
-//       // Cambiar estilo a completado
-
-//       return;
-//     }
-// despues del const p = document....
-// Víctor Rosano
-// 10:37 p.m.
-// position: fixed
-// right: 0
-// position: fixed
-// left: 0
