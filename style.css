@@ -329,9 +329,13 @@ input {
   }
   .container-header {
     gap: 40px;
+    flex-direction: column;
   }
   .nav-title img {
     padding-left: 20px;
+  }
+  .title {
+    width: max-content;
   }
 }
 
