@@ -334,6 +334,12 @@ input {
   .nav-title img {
     padding-left: 20px;
   }
+  .container-header {
+    flex-direction: column;
+  }
+  .title {
+    width: max-content;
+  }
 }
 
 @media screen and (max-width: 868px) {

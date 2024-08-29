@@ -44,7 +44,7 @@ function addCheckBtn() {
     const li = e.target.parentElement;
     const p = li.querySelector("p");
 
-    if (window.innerWidth < 450) {
+    if (window.innerWidth < 768) {
       p.classList.toggle(pCheck);
       if (checkBtn.classList.contains("fa-check-circle")) {
         checkBtn.classList = uncheck;
@@ -62,7 +62,7 @@ function addCheckBtn() {
     } else {
       p.classList.add(pCheck);
       checkBtn.classList = check;
-      tasksContainer.appendChild(li);
+      tasksContainer.prepend(li);
     }
 
     const items = document.querySelectorAll("#ul-form li");
