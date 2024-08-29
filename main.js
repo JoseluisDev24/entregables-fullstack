@@ -12,7 +12,7 @@ const noTask = document.querySelector(".noTask");
 const tasksContainer = document.querySelector(".tasks-container");
 const pCheck = "p";
 const uncheck = "btn-delete far fa-circle co";
-const checkClass = "btn-delete far fa-check-circle co";
+const check = "btn-delete far fa-check-circle co";
 
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -49,21 +49,21 @@ function addCheckBtn() {
       if (checkBtn.classList.contains("fa-check-circle")) {
         checkBtn.classList = uncheck;
       } else {
-        checkBtn.classList = checkClass;
+        checkBtn.classList = check;
       }
       return;
     }
 
-    const done = e.target.parentElement;
-    done.remove();
-
-    tasksContainer.appendChild(done);
-
-    checkBtn.className = "btn-delete far fa-check-circle";
-
-    p.className = "p";
-
-    done.className = "new-li";
+    if (p.classList.contains(pCheck)) {
+      p.classList.remove(pCheck);
+      checkBtn.classList = uncheck;
+      ul.prepend(li);
+      noTask.style.display = "none";
+    } else {
+      p.classList.add(pCheck);
+      checkBtn.classList = check;
+      tasksContainer.appendChild(li);
+    }
 
     const items = document.querySelectorAll("#ul-form li");
     if (items.length === 0) {
