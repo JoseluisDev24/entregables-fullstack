@@ -54,16 +54,16 @@ function addCheckBtn() {
       return;
     }
 
-    if (p.classList.contains(pCheck)) {
-      p.classList.remove(pCheck);
-      checkBtn.classList = uncheck;
-      ul.prepend(li);
-      
-    } else {
-      p.classList.add(pCheck);
-      checkBtn.classList = checkClass;
-      tasksContainer.appendChild(li);
-    }
+    const done = e.target.parentElement;
+    done.remove();
+
+    tasksContainer.appendChild(done);
+
+    checkBtn.className = "btn-delete far fa-check-circle";
+
+    p.className = "p";
+
+    done.className = "new-li";
 
     const items = document.querySelectorAll("#ul-form li");
     if (items.length === 0) {
