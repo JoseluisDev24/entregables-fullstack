@@ -312,6 +312,7 @@ input {
     width: 100%;
     height: 56px;
     padding: 10px;
+    background-color: rgb(78 57 57);
   }
 }
 
@@ -330,13 +331,12 @@ input {
   }
   .container-header {
     gap: 40px;
+    flex-direction: column;
   }
   .nav-title img {
     padding-left: 20px;
   }
-  .container-header {
-    flex-direction: column;
-  }
+    
   .title {
     width: max-content;
   }
