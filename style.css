@@ -308,6 +308,10 @@ input {
   gap: 30px;
   font-size: 20px;
   font-family: sans-serif;
+  li {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 .your-notes {
@@ -325,6 +329,9 @@ input {
   }
   .container-header {
     gap: 40px;
+  }
+  .nav-title img {
+    padding-left: 20px;
   }
 }
 
